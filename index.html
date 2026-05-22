@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brajesh's Portfolio</title>
+    <link rel="icon" href="Assets/image/trans.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css
+" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2L9cw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* General Styles */
+        
+         :root {
+            --header-gradient: linear-gradient(180deg, #312e81, #1e40af);
+            --main-gradient: linear-gradient(180deg, #1e40af, #312e81);
+            --footer-gradient: linear-gradient(180deg, #312e81, #1e40af);
+            --gen-info-gradient: linear-gradient(135deg, #667eea, #764ba2);
+            --des-info-gradient: linear-gradient(65deg, #667eea, #764ba2);
+        }
+        
+        .dark-theme {
+            --header-gradient: linear-gradient(180deg, #1a1a2e, #16213e);
+            --main-gradient: linear-gradient(180deg, #16213e, #1a1a2e);
+            --footer-gradient: linear-gradient(180deg, #1a1a2e, #16213e);
+            --gen-info-gradient: linear-gradient(135deg, #0f3460, #533483);
+            --des-info-gradient: linear-gradient(65deg, #0f3460, #533483);
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            color: whitesmoke;
+            text-decoration: none;
+        }
+        
+        * {
+            box-sizing: border-box;
+        }
+        /* Layout */
+        
+        header {
+            margin: 0 auto;
+            background: var(--header-gradient);
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            max-width: 1800px;
+            box-shadow: #476ff5 0px 2px 5px 0px, #847ffd 0px 2px 10px 0px;
+        }
+        
+        h1 {
+            margin: 0;
+        }
+        
+        main {
+            margin: 0 auto;
+            display: flex;
+            width: 100%;
+            max-width: 1800px;
+            padding: 1rem;
+            gap: 20px;
+            background: var(--main-gradient);
+            overflow: hidden;
+        }
+        
+        footer {
+            margin: 0 auto;
+            text-align: center;
+            padding: 1rem;
+            background: var(--footer-gradient);
+            width: 100%;
+            max-width: 1800px;
+            box-shadow: #476ff5 0px 2px 5px 0px, #847ffd 0px 2px 10px 0px;
+            color: white;
+        }
+        /* General Info Section */
+        
+        .gen-info {
+            display: flex;
+            background: var(--gen-info-gradient);
+            flex: 0 0 35%;
+            padding: 0.5rem;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+            flex-direction: column;
+        }
+        
+        .pb-img {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: url(Assets/image/painting.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            width: 99%;
+            height: 200px;
+            border-radius: 8px 8px 0 0;
+        }
+        
+        .pro-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 150px;
+            /* border-top: 2px solid #0000;
+            border-left: 2px solid red;
+            border-right: 2px solid red; */
+        }
+        
+        .pro-img img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        
+        .s-txt {
+            text-align: center;
+            margin-top: 2rem;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+        
+        .a-txt {
+            margin-top: 1.5rem;
+            padding: 0.5rem;
+            line-height: 1.5;
+            font-size: 0.95rem;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            word-wrap: break-word;
+        }
+        
+        .skill {
+            margin-top: 1.5rem;
+            padding: 0.5rem;
+            background: transparent;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            text-align: center;
+            font-weight: bold;
+            box-shadow: #667eea 0px 2px 5px 0px, #764ba2 0px 2px 10px 0px;
+            word-wrap: break-word;
+        }
+        /* Description Info Section */
+        
+        .des-info {
+            background: white;
+            flex: 1;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background: var(--des-info-gradient);
+        }
+        
+        .btns {
+            display: flex;
+            flex: 1;
+            gap: 50px;
+            margin: 0.5rem;
+            padding: 1rem;
+        }
+        
+        .pro-lnks {
+            margin-top: 1rem;
+            height: 600px;
+        }
+        
+        .Section {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            padding: 1.5rem;
+            text-align: center;
+        }
+        
+        #uiux,
+        #graphics,
+        #contact {
+            display: none;
+        }
+        /* Project Styles */
+        
+        .web-pro img,
+        .uiux-pro img,
+        .graphics-pro img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        
+        .uiux-pro h3,
+        .graphics-pro h3 {
+            margin: 0.5rem 0;
+        }
+        
+        .graphics-pro h3 {
+            font-size: 1rem;
+        }
+        /* Contact Section */
+        
+        .add {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(525px, 1fr));
+            align-items: center;
+            /* gap: 30px; */
+            padding: 1rem;
+            background: transparent;
+            border-radius: 8px;
+            grid-column: 1 / -1;
+            /* box-shadow: #667eea 0px 2px 5px 0px, #764ba2 0px 2px 10px 0px; */
+        }
+        
+        .adres-icon {
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            font-size: 1rem;
+            width: 500px;
+            /* border: 2px solid black; */
+        }
+        
+        .adres-icon i {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.5rem;
+        }
+        
+        i p {
+            margin: 0;
+            font-size: 1.5rem;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        
+        .m-txt {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 500px;
+            /* border: 2px solid black; */
+        }
+        
+        .m1 {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .m1 input,
+        input[type="email"] {
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        
+        .m1 input {
+            width: 100%;
+        }
+        
+        input[type="email"] {
+            width: 96%;
+        }
+        /* Button Styles */
+        
+        button {
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 4px;
+            background: #007bff;
+            color: white;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        
+        button:hover {
+            background: #0056b3;
+        }
+        /* Media Queries */
+        
+        @media (max-width: 768px) {
+            header {
+                margin: 0 auto;
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+        
+        @media screen and (max-width: 768px) {
+            main {
+                margin: auto;
+                flex-direction: column;
+            }
+            .gen-info,
+            .des-info {
+                margin: 0 auto;
+                width: 100%;
+            }
+            .btns {
+                flex-direction: column;
+                align-items: center;
+            }
+            .s-txt {
+                width: auto;
+                font-size: 0.9rem;
+            }
+            .a-txt {
+                width: auto;
+                font-size: 0.8rem;
+            }
+            .skill {
+                width: auto;
+                font-size: 0.8rem;
+            }
+            .add {
+                width: auto;
+                font-size: 0.5rem;
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            .adres-icon,
+            .m-txt {
+                width: 100%;
+            }
+            #web,
+            #uiux,
+            #graphics,
+            #contact {
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+        
+        @media screen and (max-width: 480px) {
+            .Section {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                padding: 1rem;
+            }
+            .btns {
+                gap: 10px;
+            }
+            .pro-lnks {
+                height: auto;
+                min-height: 400px;
+            }
+            .adres-icon,
+            .m-txt {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div>
+            <h1>Brajesh Kumar</h1>
+        </div>
+        <button onclick="toggleTheme()">Toggle Theme</button>
+    </header>
+    <main>
+        <div class="gen-info">
+            <div class="pb-img">
+                <div class="pro-img"><img src="Assets/image/mypic.png" alt="image"></div>
+            </div>
+            <div class="s-txt">
+                <h2>Brajesh Kumar</h2>
+                <p>FrontEnd Developer | UI&UX Designer | Graphic Designer</p>
+                <p>Web Developer | Long-Life Learner</p>
+            </div>
+            <div class="a-txt">
+                <p>I'm a multidisciplinary Frontend Developer, UI/UX Designer, and Graphic Designer who turns ideas into clean, engaging, and user-focused digital experiences. With a strong eye for design and a solid foundation in web technologies, I bridge
+                    the gap between aesthetics and functionality to build interfaces that not only look great but also work flawlessly. I'm passionate about solving real-world problems through thoughtful design, performance-driven code, and continuous
+                    learning. As a lifelong learner, I stay curious, adapt quickly, and constantly refine my skills to deliver modern, scalable, and impactful solutions—making me a reliable choice for teams that value creativity, precision, and growth.
+                </p>
+            </div>
+            <div class="skill">HTML | CSS | JavaScript | PYTHON | DJANGO | VS CODE | SL TEXT | PHOTOSHOP | PHOTO EDITING | BANNER | TEMPLATES | MS EXCEL | TALLY ERP9&PRIME | ACCOUNTING</div>
+        </div>
+        <div class="des-info">
+            <div class="btns">
+                <button onclick="showSection('web')">Web</button>
+                <button onclick="showSection('uiux')">UI UX</button>
+                <button onclick="showSection('graphics')">Graphics</button>
+                <button onclick="showSection('contact')">Contact</button>
+            </div>
+            <div class="pro-lnks">
+                <div class="Section" id="web">
+                    <div class="web-pro"><img src="Assets/image/E1.png" alt="PHOTOSHOP">
+                        <h3>This is my institute project work</h3>
+                        <a href="Assets/project/Untitled-1.html">View</a>
+                    </div>
+                    <div class="web-pro"><img src="Assets/image/E1.png" alt="PHOTOSHOP">
+                        <h3>This is my institute project work</h3>
+                        <a href="Assets/project/project1.html">View</a>
+                    </div>
+                    <div class="web-pro"><img src="Assets/image/E1.png" alt="PHOTOSHOP">
+                        <h3>This is my Institute project work</h3>
+                        <a href="Assets/project/4may.html">View</a>
+                    </div>
+                    <div class="web-pro"><img src="Assets/image/E1.png" alt="PHOTOSHOP">
+                        <h3>This is my Institute Project work</h3>
+                        <a href="Assets/project/29may.html">View</a>
+                    </div>
+                    <div class="web-pro"><img src="Assets/image/E1.png" alt="PHOTOSHOP">
+                        <h3>This is my Institute project work</h3>
+                        <a href="Assets/project/port.html">View</a>
+                    </div>
+                    <div class="web-pro"><img src="Assets/image/E1.png" alt="PHOTOSHOP">
+                        <h3>This is my Institute project work</h3>
+                        <a href="Assets/project/signup.html">View</a>
+                    </div>
+                </div>
+                <!--  -->
+                <div class="Section" id="uiux">
+                    <div class="uiux-pro"><img src="Assets/image/E1.png" alt="PHOTOSHOP">
+                        <h3>This my E-commerce ui ux project</h3>
+                        <a href="http://">View</a>
+                    </div>
+                    <div class="uiux-pro"><img src="Assets/image/E1.png" alt="PHOTOSHOP">
+                        <h3>This my E-commerce ui ux project</h3>
+                        <a href="http://">View</a>
+                    </div>
+                    <div class="uiux-pro"><img src="Assets/image/E1.png" alt="PHOTOSHOP">
+                        <h3>This my E-commerce ui ux project</h3>
+                        <a href="http://">View</a>
+                    </div>
+                    <div class="uiux-pro"><img src="Assets/image/E1.png" alt="PHOTOSHOP">
+                        <h3>This my E-commerce ui ux project</h3>
+                        <a href="http://">View</a>
+                    </div>
+                    <div class="uiux-pro"><img src="Assets/image/E1.png" alt="PHOTOSHOP">
+                        <h3>This my E-commerce ui ux project</h3>
+                        <a href="http://">View</a>
+                    </div>
+                    <div class="uiux-pro"><img src="Assets/image/E1.png" alt="PHOTOSHOP">
+                        <h3>This my E-commerce ui ux project</h3>
+                        <a href="http://">View</a>
+                    </div>
+                </div>
+                <!-- Graphics Section -->
+                <div class="Section" id="graphics">
+                    <div class="graphics-pro"><img src="Assets/image/E1.png" alt="PHOTOSHOP">
+                        <h3>This my E-commerce graphics project</h3>
+                        <a href="http://">View</a>
+                    </div>
+                    <div class="graphics-pro"><img src="Assets/image/E1.png" alt="PHOTOSHOP">
+                        <h3>This my E-commerce graphics project</h3>
+                        <a href="http://">View</a>
+                    </div>
+                    <div class="graphics-pro"><img src="Assets/image/E1.png" alt="PHOTOSHOP">
+                        <h3>This my E-commerce graphics project</h3>
+                        <a href="http://">View</a>
+                    </div>
+                    <div class="graphics-pro"><img src="Assets/image/E1.png" alt="PHOTOSHOP">
+                        <h3>This my E-commerce graphics project</h3>
+                        <a href="http://">View</a>
+                    </div>
+                    <div class="graphics-pro"><img src="Assets/image/E1.png" alt="PHOTOSHOP">
+                        <h3>This my E-commerce graphics project</h3>
+                        <a href="http://">View</a>
+                    </div>
+                    <div class="graphics-pro"><img src="Assets/image/E1.png" alt="PHOTOSHOP">
+                        <h3>This my E-commerce graphics project</h3>
+                        <a href="http://">View</a>
+                    </div>
+                </div>
+                <!-- Contact Section -->
+                <div class="Section" id="contact">
+                    <div class="add">
+                        <div class="adres-icon">
+                            <i class="fas fa-home"><p>Utari Prakash Puram Jalesar Raod Tedi Bagiya Agra Uttar Pradesh</p></i>
+                            <i class="fas fa-phone"><p>+91 7088769439</p></i>
+                            <i class="fa-brands fa-whatsapp"><p><a href="https://whatsapp.com/dl/">+91 708879439</a></p></i>
+                            <i class="fa-solid fa-envelope"><p><a href="https://mail.google.com/">brajesh3791@gmail.com</a></p></i>
+                        </div>
+                        <div class="m-txt">
+                            <!-- <label for="text">first</label> -->
+                            <div class="m1">
+                                <input type="text" placeholder="Enter your first name">
+                                <input type="text" placeholder="Enter Your Last name">
+                            </div>
+                            <input type="email" placeholder="Enter your email">
+                            <textarea name="msg" id="" rows="5"></textarea>
+                            <button type="submit">Send Message</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>© <span id="year"></span> Brajesh Kumar. All Rights Reserved.</p>
+    </footer>
+    <script>
+        function toggleTheme() {
+            document.body.classList.toggle('dark-theme');
+        }
+    </script>
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.Section').forEach(el => {
+                el.style.display = 'none';
+            });
+            // Show the selected section
+            const section = document.getElementById(sectionId);
+            if (section) {
+                section.style.display = 'grid';
+            }
+        }
+    </script>
+</body>
+
+</html>
