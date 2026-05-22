@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nagar Nigam</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            flex-wrap: wrap;
+            background-color: lightgray;
+            box-sizing: border-box;
+        }
+        .navigation {
+            padding: 10px;
+            display: flex;
+            border-bottom: 1px solid black;
+            background-color: antiquewhite;
+            gap: 20px;
+            width: 1800px auto;
+        }
+        .n1 {
+            border-right: 1px solid black;
+        }
+        .n1 a {
+            text-decoration: none;
+            color: black;
+        }
+        .n2,.n3,.n5 {
+            
+            border-right: 1px solid black;
+            display: flex;
+        }
+        .n2 {
+            gap: 10px;
+        }
+        .n2-1 {
+            padding: 5px;
+            border: 1px solid black;
+        }
+        main {
+            display: flex;
+            max-width: 1800px auto;
+            /* border: 1px solid black; */
+            padding: 10px;
+            gap: 20px;
+        }
+        #LHS {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 1100px;
+            /* border: 1px solid black; */
+        }
+        .Left-side {
+            margin: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid gray;
+            background-color: #fff;
+        }
+        .first {
+            margin: 10px auto;
+            border: 1px solid gray;
+            border-radius: 5px;
+            width: 1000px;
+            height: 450px;
+        }
+        .first img {
+            width: 100%;
+            height: 100%;
+        }
+        .second,.RHS-second {
+            padding: 1px;
+            background-color: bisque;
+            color: orange;
+        }
+        h3 {
+            margin-left: 25px;
+        }
+        .Left-side1 {
+            margin: 10px;
+            border: 1px solid gray;
+        }
+        .third {
+            padding: 10px;
+            background-color: #fff;
+            border-top: 1px solid gray;
+        }
+        span {
+            padding: 10px;
+            font-size: 1.7rem;
+            background-color: skyblue;
+        }
+        .four {
+            display: flex;
+            gap: 10px;
+            padding: 10px;
+            background-color: bisque;
+        }
+        .five {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding: 10px;
+            border-top: 1px solid gray;
+            background-color: #fff;
+        }
+        .five1 {
+            display: grid;
+            gap: 10px;
+            grid-template-columns: repeat(3,1fr);
+        }
+        .f1-1-1 {
+            padding: 5px;
+            background-color: blue;
+            color: #fff;
+            font-size: 1.3rem;
+        }
+        .f1-2-1 {
+            padding: 5px;
+            background-color: red;
+            color: #fff;
+            font-size: 1.3rem;
+        }
+        .f1-3-1 {
+            padding: 5px;
+            background-color: cadetblue;
+            color: #fff;
+            font-size: 1.3rem;
+        }
+        .f1-1-2,.f1-1-3,.f1-1-4,.f1-1-5{
+            padding: 10px;
+            border-bottom: 1px solid gray;
+            font-size: 1.1rem;
+        }
+        .f1-1-6 {
+            padding: 10px;
+            text-align: center;
+            font-size: 1.1rem;
+        }
+        .f1-1 {
+            border: 1px solid blue;
+        }
+        .f1-2{
+            border: 1px solid red;
+        }
+        .f1-3{
+            border: 1px solid cadetblue;
+        }
+        .f2-1 {
+            padding: 10px;
+            border: 1px solid black;
+        }
+        .f2-2 {
+            border: 1px solid black;
+            display: flex;
+        }
+        .f2-2-1,.f2-2-2,.f2-2-3,.f2-2-4{
+            flex: 1;
+            padding: 5px;
+            border: 1px solid black;
+        }
+        .five3 {
+            display: flex;
+            gap: 20px;
+        }
+        .f3-1,.f3-2,.f3-3{
+            flex: 1;
+             border: 1px solid black;
+            
+        }
+        .Left-side2 {
+            margin: 10px;
+            display: flex;
+            gap: 20px;
+        }
+        .six-1,.six-2 {
+            flex: 1;
+            border: 1px solid black;
+        }
+        .p-1 {
+            padding: 10px;
+            background-color: greenyellow;
+        }
+        .p1-1,.p1-2,.p1-3,.p1-4,.p1-5,.p1-6 {
+            padding: 10px;
+            background-color: #fff;
+            border-top: 1px solid gray;
+        }
+        .p1-6 {
+            text-align: center;
+        }
+        .seven {
+            background-color: #fff;
+        }
+        .img-1 {
+            border-right: 1px solid grey;
+        }
+        .eight {
+            padding: 10px;
+            background-color: red;
+            color: honeydew;
+            font-size: 1.2rem;
+        }
+        .nine { padding: 10px;
+            background-color: #fff;
+            justify-content: center;
+            align-items: center;
+        }
+        .nine-img {
+            align-items: center;
+            height: 100%;
+            width: 100%;
+        }
+        .ten {
+            border-top: 2px solid orangered;
+        }
+        .eleven {
+            height: 500px;
+            padding: 150px;
+            border-top: 1px solid gray;
+        }
+        /* Right Hand Site Section */
+        #RHS {
+            width: 600px;
+        }
+        .right-side{
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            width: 700px;
+            border: 1px solid gray;
+            background-color: #fff;
+        }
+        .RHS-first {
+            padding: 10px;
+            margin: 10px auto;
+            border: 1px solid gray;
+            border-radius: 5px;
+            width: 650px;
+            height: 350px;
+        }
+        .RHS-first1 {
+            padding: 10px;
+            margin: 10px auto;
+            background-color: lightskyblue;
+            border: 1px solid gray;
+            border-radius: 5px;
+            width: 650px;
+            height: 550px;
+        }
+        .RHS-first1 img {
+            width: 100%;
+            height: 100%;
+        }
+        .RHS-first2 {
+            padding: 10px;
+            margin: 10px auto;
+            background-color: lightskyblue;
+            border: 1px solid gray;
+            border-radius: 5px;
+            width: 650px;
+            height: 150px;
+        }
+        .r-first2-1 {
+            padding-bottom: 10px;
+        }
+        .r-first2-2 {
+            border-top: 2px solid gray;
+            font-size: 1.7rem;
+        }
+        .r-first2-3 {
+            padding: 10px;
+            margin: 10px auto;
+            background-color: burlywood;
+            border: 1px solid gray;
+            border-radius: 5px;
+            width: 650px;
+            height: 20px;
+            color: red;
+            font-size: 1.7rem;
+        }
+        .r-first2-4 {
+            padding: 10px;
+            margin: 10px;
+            /* background-color: lightskyblue; */
+            border: 1px solid gray;
+            border-radius: 5px;
+            width: 650px;
+            height: 350px;
+        }
+        .head {
+            background-color: bisque;
+            font-size: 1.5rem;
+        }
+        .head1 {
+            padding-top: 10px;
+            justify-content: center;
+            align-items: center;
+            justify-items: center;
+            gap: 0;
+            border-top: 2px solid gray;
+        }
+        .head1-1 {
+            width: 100px;
+            height: 150px;
+            border: 2px solid red;
+            border-radius: 90px;
+        }
+        .head1-1 img {
+            width: 100%;
+            height: 100%;
+            border-radius: 90px;
+        }
+        h4 {
+            margin-bottom: 5px;
+            justify-content: center;
+            text-align: center;
+        }
+        p {
+            margin-top: 5px;
+        }
+        .head1-2 {
+            border-top: 2px solid gray;
+        }
+        .r-first {
+            padding-top: 10px;
+            margin-left: 10px;
+            width: 630px;
+            height: 330px;
+        }
+        .r-first img {
+            width: 100%;
+            height: 100%;
+        }
+        .s1 {
+            padding: 10px;
+        }
+        .ancr {
+            border-bottom: 2px solid gray;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navigation">
+        <div class="n1"><a href="http://" target="_blank" rel="noopener noreferrer">skip the main content</a></div>
+        <div class="n2">
+            <div class="n2-1">-A</div>
+            <div class="n2-1">A</div>
+            <div class="n2-1">+A</div>
+        </div>
+        <div class="n3">
+            <div class="n3-1">select the theme</div>
+            <div class="n3-1">sky blue</div>
+            <div class="n3-1">green</div>
+            <div class="n3-1">yellow</div>
+            <div class="n3-1">black</div>
+            <div class="n3-1">white</div>
+        </div>
+        <div class="n4">
+            <input type="search" id="search" name="search" placeholder="search Here">
+            <button type="submit">search</button>
+        </div>
+        <div class="n5">
+            <div class="n5-1">invisitors:100015410</div>
+            <div class="n5-2">Admin Login</div>
+        </div>
+    </nav>
+    <main>
+        <section id="LHS">
+            <article class="Left-side">
+                <div class="first">
+                    <img src="D:\Jr Web Designer\Assets\image\R1.jpeg" alt="Image">
+                </div>
+            </article>
+            <article class="Left-side1">
+                <div class="second"><h3>Helpline Numbers</h3></div>
+                <div class="third">
+                    <marquee behavior="" direction="left" onmouseover="this.stop();" onmouseout="this.start();" scrolldelay="99">
+                        <span>Helpline number : 156454554</span>
+                        <span>Helpline number : 156454554</span>
+                        <span>Helpline number : 156454554</span>
+                        <span>Helpline number : 156454554</span>
+                        <span>Helpline number : 156454554</span>
+                        <span>Helpline number : 156454554</span>
+                        <span>Helpline number : 156454554</span>
+                        <span>Helpline number : 156454554</span>
+                        <span>Helpline number : 156454554</span>
+                    </marquee>
+                </div>
+            </article>
+            <article class="Left-side1">
+                <div class="four" role="navigation" aria-label="Main navigation with icon links">
+                    <a href="#home" aria-label="Home" role="link">
+                        <span class="material-icons" aria-hidden="true">home</span>
+                        Home
+                    </a>
+                    <a href="#tenders" aria-label="Tenders" role="link">
+                        <span class="material-icons" aria-hidden="true">assignment</span>
+                        Tenders
+                    </a>
+                    <a href="#gallery" aria-label="Gallery" role="link">
+                        <span class="material-icons" aria-hidden="true">photo_library</span>
+                        Gallery
+                    </a>
+                    <a href="#sitemap" aria-label="Site Map" role="link">
+                        <span class="material-icons" aria-hidden="true">map</span>
+                        Site Map
+                    </a>
+                    <a href="#contacts" aria-label="Contacts" role="link">
+                        <span class="material-icons" aria-hidden="true">contacts</span>
+                        Contacts
+                    </a>
+                </div>
+                <div class="five">
+                    <div class="five1">
+                        <div class="f1-1">
+                            <div class="f1-1-1">About Nagar Nigam</div>
+                            <div class="f1-1-2">Introduction</div>
+                            <div class="f1-1-3">history of Nagar Nigam</div>
+                            <div class="f1-1-4">Aims</div>
+                            <div class="f1-1-5">city</div>
+                            <div class="f1-1-6">view more >>></div>
+                        </div>
+                        <div class="f1-2">
+                            <div class="f1-2-1">Online service </div>
+                            <div class="f1-1-2">Complaints</div>
+                            <div class="f1-1-3">Birth Certificate</div>
+                            <div class="f1-1-4">Death Certificate</div>
+                            <div class="f1-1-5">Online e-tenders</div>
+                            <div class="f1-1-6">view more >>></div>
+                        </div>
+                        <div class="f1-3">
+                            <div class="f1-3-1">information </div>
+                            <div class="f1-1-2">Construction Details</div>
+                            <div class="f1-1-3">List of toilets</div>
+                            <div class="f1-1-4">List of Dustbins</div>
+                            <div class="f1-1-5">Officer List</div>
+                            <div class="f1-1-6">view more >>></div>
+                        </div>
+                    </div>
+                    <div class="five2">
+                        <div class="f2-1">Finance Account</div>
+                        <div class="f2-2">
+                            <div class="f2-2-1">Budget</div>
+                            <div class="f2-2-2">Balancesheet</div>
+                            <div class="f2-2-3">Service Level Benchmark</div>
+                            <div class="f2-2-4">CA Appointment letter</div>
+                        </div>
+                    </div>
+                    <div class="five3">
+                        <div class="f3-1">About RTI</div>
+                        <div class="f3-2">Public Corner</div>
+                        <div class="f3-3">Grievance</div>
+                    </div>
+                </div>
+            </article>
+            <article class="Left-side2">
+                <div class="six-1">
+                    <div class="p-1">AMRUT YOJNA</div>
+                    <div class="p1-1">Amrut Yojna</div>
+                    <div class="p1-2">Amrut Guidelines</div>
+                    <div class="p1-3">Children Park</div>
+                    <div class="p1-4">Amrut Gallery</div>
+                    <div class="p1-5">Amrut Reforms</div>
+                    <div class="p1-6">View More >>></div>
+                </div>
+                <div class="six-2">
+                    <div class="p-1">AMRUT YOJNA</div>
+                    <div class="p1-1">Amrut Yojna</div>
+                    <div class="p1-2">Amrut Guidelines</div>
+                    <div class="p1-3">Children Park</div>
+                    <div class="p1-4">Amrut Gallery</div>
+                    <div class="p1-5">Amrut Reforms</div>
+                    <div class="p1-6">View More >>></div>
+                </div>
+            </article>
+            <article class="Left-side1">
+                <div class="seven">
+                    <marquee behavior="" direction="left" onmouseover="this.stop();" onmouseout="this.start();" scrolldelay="99">
+                        <img src="" alt="image1" class="img-1">
+                        <img src="" alt="image2" class="img-1">
+                        <img src="" alt="image3" class="img-1">
+                        <img src="" alt="image4" class="img-1">
+                        <img src="" alt="image5" class="img-1">
+                        <img src="" alt="image6" class="img-1">
+                        <img src="" alt="image7" class="img-1">
+                        <img src="" alt="image8" class="img-1">
+                        <img src="" alt="image9" class="img-1">
+                    </marquee>
+                </div>
+            </article>
+            <article class="Left-side1">
+                <div class="eight">
+                    Swachh Bharat Mission: Nagar Nigam Mathura Vrindavan
+                </div>
+                <div class="nine">
+                    <img src="F:\screen mirror\painting.jpg" alt="image" class="nine-img">
+                </div>
+            </article>
+            <article class="Left-side1">
+                <div class="ten">
+                    <p>Officer Order and Inspection</p>
+                </div>
+                <div class="eleven"></div>
+            </article>
+        </section>
+        <!-- Right Hand Site Section Start to Here >>> -->
+        <!-- Right Hand Site Section Start to Here >>> -->
+        <section id="RHS">
+            <section class="right-side">
+                <article class="RHS-first">
+                   <div class="r-first"><img src="F:\nagar nugam img\RightHeader_1_1.jpeg" alt="image"></div>
+                </article>
+                <article class="RHS-first">
+                     <div class="RHS-second"><h3>Public News</h3></div>
+                    <div class="RHS-third">
+                    <marquee behavior="" direction="up" scrolldelay="99" onmouseover="this.stop();" onmouseout="this.start();">
+                        <div class="s1">
+                            <a href="http://" target="_blank" rel="noopener noreferrer" class="ancr">
+                                भवनों में दीवारों के फटने एवं दरारें आने की समस्या के समाधान सम्बन्धी पत्रावली। 
+                            </a>
+                        </div>
+                        <div class="s1">
+                            <a href="http://" target="_blank" rel="noopener noreferrer" class="ancr">
+                                भवनों में दीवारों के फटने एवं दरारें आने की समस्या के समाधान सम्बन्धी पत्रावली।
+                            </a>
+                        </div>
+                        <div class="s1">
+                            <a href="http://" target="_blank" rel="noopener noreferrer" class="ancr">
+                                भवनों में दीवारों के फटने एवं दरारें आने की समस्या के समाधान सम्बन्धी पत्रावली। 
+                            </a>
+                        </div>
+                        <div class="s1">
+                            <a href="http://" target="_blank" rel="noopener noreferrer" class="ancr">
+                                भवनों में दीवारों के फटने एवं दरारें आने की समस्या के समाधान सम्बन्धी पत्रावली। 
+                            </a>
+                        </div>
+                        <div class="s1">
+                            <a href="http://" target="_blank" rel="noopener noreferrer" class="ancr">
+                                भवनों में दीवारों के फटने एवं दरारें आने की समस्या के समाधान सम्बन्धी पत्रावली। 
+                            </a>
+                        </div>
+                        <div class="s1">
+                            <a href="http://" target="_blank" rel="noopener noreferrer" class="ancr">
+                                भवनों में दीवारों के फटने एवं दरारें आने की समस्या के समाधान सम्बन्धी पत्रावली। 
+                            </a>
+                        </div>
+                    </marquee>
+                    </div>
+                </article>
+                <article class="RHS-first">
+                     <div class="RHS-second"><h3>E-Newslatter</h3></div>
+                    <div class="RHS-third">
+                    <marquee behavior="" direction="up" scrolldelay="99" onmouseover="this.stop();" onmouseout="this.start();">
+                        <div class="s1">
+                            <a href="http://" target="_blank" rel="noopener noreferrer" class="ancr">
+                                भवनों में दीवारों के फटने एवं दरारें आने की समस्या के समाधान सम्बन्धी पत्रावली। 
+                            </a>
+                        </div>
+                        <div class="s1">
+                            <a href="http://" target="_blank" rel="noopener noreferrer" class="ancr">
+                                भवनों में दीवारों के फटने एवं दरारें आने की समस्या के समाधान सम्बन्धी पत्रावली।
+                            </a>
+                        </div>
+                        <div class="s1">
+                            <a href="http://" target="_blank" rel="noopener noreferrer" class="ancr">
+                                भवनों में दीवारों के फटने एवं दरारें आने की समस्या के समाधान सम्बन्धी पत्रावली। 
+                            </a>
+                        </div>
+                        <div class="s1">
+                            <a href="http://" target="_blank" rel="noopener noreferrer" class="ancr">
+                                भवनों में दीवारों के फटने एवं दरारें आने की समस्या के समाधान सम्बन्धी पत्रावली। 
+                            </a>
+                        </div>
+                        <div class="s1">
+                            <a href="http://" target="_blank" rel="noopener noreferrer" class="ancr">
+                                भवनों में दीवारों के फटने एवं दरारें आने की समस्या के समाधान सम्बन्धी पत्रावली। 
+                            </a>
+                        </div>
+                        <div class="s1">
+                            <a href="http://" target="_blank" rel="noopener noreferrer" class="ancr">
+                                भवनों में दीवारों के फटने एवं दरारें आने की समस्या के समाधान सम्बन्धी पत्रावली। 
+                            </a>
+                        </div>
+                    </marquee>
+                    </div>
+                </article>
+                <article class="RHS-first1">
+                    <img src="F:\nagar nugam img\CAndD.jpg" alt="image">
+                </article>
+                <article class="RHS-first2">
+                    <div class="r-first2-1"><img src="F:\nagar nugam img\logo-en-main.jpg" alt="image"></div>
+                    <div class="r-first2-2"><h1>Helpline Number: 18001803580</h1></div>
+                </article>
+                <article class="r-first2-3">Important Notices</article>
+                <article class="RHS-first1"><img src="F:\nagar nugam img\Right8-1.jpeg" alt="image"></article>
+                <article class="r-first2-4">
+                    <div class="head">Mayor Message</div>
+                    <div class="head1">
+                        <div class="head1-1"><img src="F:\nagar nugam img\Mayor.jpeg" alt="image">
+                        </div>
+                        <h4>Shri Vinod Agarwal</h4><p>Mayor, Mathura-Vrindavan</p>
+                        <div class="head1-2"><p>Nagar Nigam is improving day-by-day by focusing on all major areas.
+                             With the advent of digital age, it is only appropriate that we use Internet to make our lives easy.
+                            This site will provide every information related to Mathura-Vrindavan Nagar Nigam.</p></div>
+                    </div>
+                </article>
+                <article class="r-first2-4">
+                    <div class="head">Commissioner Message</div>
+                    <div class="head1">
+                        <div class="head1-1"><img src="F:\nagar nugam img\M0000001.png" alt="image">
+                        </div>
+                        <h4>Shri Jag Pravesh (IAS)</h4><p>Municipal Commissioner</p>
+                        <div class="head1-2">
+                            <p>Every Municipal Corporation in India is administratively headed by a Municipal Commissioner,
+                             who is the de facto head of the municipal corporation, the form of government which is usually granted to a city of more one million in population. While a mayor is elected to serve as the titular head of a municipal corporation,
+                             a municipal commissioner is appointed by the state government from the Indian Administrative Service and mostly from State Civi.
+                            </p>
+                        </div>
+                    </div>
+                </article>
+            </section>
+        </section>
+    </main>
+</body>
+</html>

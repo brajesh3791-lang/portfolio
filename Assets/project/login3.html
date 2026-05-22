@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Login Page</title>
+	<style type="text/css">
+		body {
+			margin: 0;
+			padding: 0;
+			font-family: 'Arial',sans-serif;
+		}
+		main {
+			margin: auto;
+			border: 1px solid black;
+			width: 300px;
+			border-radius: 20px;
+			position: relative;
+			top: 100px;
+		}
+		.title {
+			padding: 20px;
+			font-size: 18px;
+			color: white;
+			background: linear-gradient(blue,purple);
+			width: 87%;
+			border-radius: 20px 20px 0 0;
+		}
+		.info {
+			margin: 5px;
+			padding: 5px;
+			text-align: center;
+		}
+		.info input {
+			margin: 5px;
+			padding: 5px;
+			border-radius: 20px;
+			width: 90%;
+		}
+		.rf {
+			display: flex;
+			margin: 5px;
+			padding: 5px;
+		}
+		.a1,.a2 {
+			margin: 5px;
+		}
+		.btnn {
+			margin: 5px;
+			padding: 5px;
+		}
+		.btnn button {
+			margin: 5px;
+			padding: 5px;
+			font-size: 18px;
+			border: 1px solid white;
+			border-radius: 20px;
+			width: 90%;
+			color: white;
+			background: linear-gradient(blue,purple);
+		}
+		.text {
+			display: flex;
+			width: 100%;
+			justify-content: center;
+		}
+		.A1,.A2 {
+			margin: 5px;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<main>
+		<div class="title">Login Form</div>
+		<div class="info">
+			<input type="Email" name="Email" placeholder="Email" required>
+			<input type="Password" name="Password" placeholder="Password" required>
+		</div>
+		<div class="rf">
+			<div class="a1">
+				<input type="checkbox" name="checkbox">
+				<label for="checkbox">Remember me</label>
+			</div>
+			<div class="a2">
+				<a href="">Forgot password</a>
+			</div>
+		</div>
+		<div class="btnn">
+				<center><button type="submit">Login</button></center>
+		</div>
+		<div class="text">
+			<div class="A1">Not A member?.</div>
+			<div class="A2"><a href="">Sign-Up Now</div>
+		</div>
+	</main>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Toggle Animation</title>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+		}
+		main {
+			position: relative;
+			margin: 10px auto;
+			padding: 20px;
+			top: 100px;
+			max-width: 400px;
+		}
+		.toggle-body {
+			margin: 5px;
+			padding: 5px;
+			border: 8px solid black;
+			border-radius: 70px;
+		}
+		.toggle-dot {
+			margin: 10px;
+			padding: 10px;
+			border: 2px solid black;
+			background-color: black;
+			width: 80px;
+			height: 80px;
+			border-radius: 50%;
+			animation: slide 4s ease-in infinite;
+		}
+		@keyframes slide {
+			0% { transform:translateX(0px); }
+			50% { transform:translateX(240px); }
+			100% { transform:translateX(0px); }
+		}
+	</style>
+</head>
+<body>
+	<main>
+		<div class="toggle-body">
+			<div class="toggle-dot"></div>
+		</div>
+	</main>
+</body>
+</html>

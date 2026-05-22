@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>New</title>
+	<style type="text/css">
+.outer {
+  width: 375px;
+  aspect-ratio: 1;
+  border-radius: 12px;
+  background: dodgerblue;
+
+  .inner {
+    width: 160px;
+    height: 60px;
+    border-radius: inherit;
+    background: skyblue;
+  }
+}
+
+.inner {
+  /* etc. */
+  outline: 8px solid white;
+}
+.outer {
+  /* etc. */
+  background: 
+    -8px 60px / 20px 20px 
+        radial-gradient(circle at right bottom, transparent 12px, white 12px),
+    160px -8px / 20px 20px 
+        radial-gradient(circle at right bottom, transparent 12px, white 12px),
+    dodgerblue;
+}
+.outer {
+  width: 375px;
+  aspect-ratio: 1;
+
+  /* border radius */
+  --r: 12px;
+
+  /* width, height, and outline of smaller box */
+  --w: 160px;
+  --h: 60px;
+  --o: 8px;
+
+  /* offset and size of the radial-gradient images */
+  --ofs: calc(-1 * var(--o));
+  --sz: calc(var(--r) + var(--o));
+  --img: radial-gradient(circle at right bottom, transparent var(--r), white var(--r));
+
+  border-radius: var(--r);
+  background-image: var(--img), var(--img);
+  background-position: var(--ofs) var(--h), var(--w) var(--ofs);
+  background-size: var(--sz) var(--sz);
+  background-repeat: no-repeat;
+  background-color: dodgerblue;
+
+  .inner {
+    width: var(--w);
+    height: var(--h);
+    outline: var(--o) solid white;
+    border-radius: inherit;
+    background: skyblue;
+  }
+}
+.outer {
+  /* etc. */
+  background-image:
+   radial-gradient(circle at var(--cnr), transparent var(--r), white var(--r)),
+   radial-gradient(circle at var(--cnr), transparent var(--r), white var(--r)),
+   linear-gradient(45deg, rgb(210, 223, 246), rgb(51, 134, 242));
+
+  &:nth-of-type(1) {
+    --cnr: right bottom;
+    background-position: 
+      var(--ofs) var(--h), 
+      var(--w) var(--ofs), 
+      0 0;
+    /* etc. */
+  }
+
+  &:nth-of-type(2) {
+    --cnr: left bottom;
+    background-position: 
+      calc(100% - var(--ofs)) var(--h), 
+      calc(100% - var(--w)) calc(var(--ofs)), 
+      0 0;
+    /* etc. */
+  }
+
+  &:nth-of-type(3) {
+    --cnr: left top;
+    background-position: 
+      calc(100% - var(--ofs)) calc(100% - var(--h)), 
+      calc(100% - var(--w)) calc( 100% - var(--ofs)), 
+      0 0;
+    /* etc. */
+  }
+
+  &:nth-of-type(4) {
+    --cnr: right top;
+    background-position: 
+      var(--ofs) calc(100% - var(--h)), 
+      var(--w) calc(100% - var(--ofs)), 
+      0 0;
+    /* etc. */
+  }
+}
+.date {
+  outline: var(--outline) solid navy;
+  /* etc. */
+}
+
+	</style>
+</head>
+<body>
+	<div class="outer">
+	  <div class="inner"></div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: lightcyan;
+        }
+        .footer {
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+        }
+        .socials, .contact-info, .query-form {
+            flex: 1;
+            padding: 10px;
+        }
+        .socials div {
+            margin-bottom: 5px;
+            font-size: 30px;
+        }
+        .contact-info > div {
+            margin-bottom: 10px;
+        }
+        .query-form input, .query-form textarea, .query-form button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid black;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .query-form button {
+            background-color: dodgerblue;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .query-form button:hover {
+            background-color: deepskyblue;
+            color: black;
+            font-weight: bolder;
+        }
+        .inline-fields {
+            display: flex;
+            justify-content: space-between;
+        }
+        .inline-fields input {
+            flex: 1;
+            margin-right: 10px;
+        }
+        .query-form textarea {
+            width: 100%;
+            resize: vertical;
+        }
+    </style>
+</head>
+<body>
+    <div class="footer">
+        <div class="socials">
+            <h2>Connect with Us</h2>
+            <div class="socials-facebook"><i class="fab fa-facebook"></i></div>
+            <div class="socials-twitter"><i class="fab fa-twitter"></i></div>
+            <div class="socials-instagram"><i class="fab fa-instagram"></i></div>
+            <div class="socials-linkedin"><i class="fab fa-linkedin"></i></div>
+            <div class="socials-youtube"><i class="fab fa-youtube"></i></div>
+        </div>
+        <div class="contact-info">
+            <h4>Contact Info</h4>
+            <div class="contact-info-phone">
+                <strong>Phone:</strong><br>
+                <span>+91-9084079040</span>
+            </div>
+            <div class="contact-info-address">
+                <strong>Address:</strong><br>
+                <span>Deeksha KCR Town, Rohta, Agra</span>
+            </div>
+            <div class="contact-info-email">
+                <strong>Email:</strong><br>
+                <span>info@acossia.com</span>
+            </div>
+            <div class="contact-info-whatsapp">
+                <strong>Whatsapp:</strong><br>
+                <span><a href="https://wa.me/313245132321">Chat on Whatsapp</a></span>
+            </div>
+        </div>
+        <div class="query-form">
+            <h2>Drop Us A Line</h2>
+            <div class="inline-fields">
+                <input type="text" placeholder="Name" required>
+                <input type="text" placeholder="Contact No" required>
+            </div>
+            <div class="inline-fields">
+                <input type="email" placeholder="Email" required>
+                <input type="text" placeholder="Subject" required>
+            </div>
+            <textarea placeholder="Enter your query" rows="4" required></textarea>
+            <button type="submit">Send</button>
+        </div>
+    </div>
+    <p style="text-align: center; margin-top: 20px;">
+        &copy; 2025, Created By Acossia. All rights reserved.
+    </p>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Art World Logo</title>
+	<style type="text/css">
+		body {
+			background-color: #f0f0f0;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 100vh;
+			margin: 0;
+			font-family: 'Poppins', sans-serif;
+		}
+
+		.logo-container {
+			display: flex;
+			align-items: center;
+			gap: 20px;
+			background-color: #fff;
+			border: 2px solid #ff6f61;
+			padding: 20px 30px;
+			border-radius: 15px;
+			box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+			transition: transform 0.3s ease;
+		}
+
+		.logo-container:hover {
+			transform: scale(1.05);
+		}
+
+		.logo-icon {
+			width: 70px;
+			height: 70px;
+			background: linear-gradient(135deg, #ff6f61, #ffcc70);
+			border-radius: 50%;
+			position: relative;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			
+		}
+
+		/*	Brush handle	*/
+		.logo-icon::before {
+			content: "";
+			position: absolute;
+			bottom: 10px;
+			width: 8px;
+			height: 30px;
+			background: #333;
+			border-radius: 4px;
+			transform: rotate(-45deg);
+		}
+
+		/*	Brush handle	*/
+		.logo-icon::after {
+			content: "";
+			position: absolute;
+			top: 10px;
+			width: 25px;
+			height: 10px;
+			background: #333;
+			border-radius: 50% 50% 0 0;
+			transform: rotate(-45deg);
+		}
+
+		.logo-text {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+		}
+
+		.logo-title {
+			font-size: 32px;
+			font-weight: bold;
+			color: #333;
+			letter-spacing: 1px;
+		}
+
+		.logo-title span {
+			color: #ff6f61;
+		}
+
+		.tagline {
+			font-size: 14px;
+			color: #777;
+			margin-top: 5px;
+		}
+	</style>
+</head>
+<body>
+	<div class="logo-container">
+		<div class="logo-icon"></div>
+		<div class="logo-text">
+			<div class="logo-title"><span>Art</span>World</div>
+			<div class="tagline">Painting dreams, Creating World</div>
+		</div>
+	</div>
+	
+</body>
+</html>

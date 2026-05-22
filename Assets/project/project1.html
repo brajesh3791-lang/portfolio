@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Companies Group</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+        }
+        
+        .first {
+            display: flex;
+            align-items: center;
+        }
+        
+        img {
+            height: 40px;
+            margin-right: 10px;
+        }
+        
+        h2 {
+            margin: 0;
+            font-size: 24px;
+        }
+        /* second */
+        
+        .second {
+            display: flex;
+            align-items: center;
+        }
+        
+        #info,
+        #contact-info {
+            margin: 0 10px;
+            padding: 5px;
+            font-size: 16px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 4px;
+        }
+        /* Main Container */
+        
+        main {
+            margin: 10 auto;
+            padding: 10px;
+            background-color: whitesmoke;
+        }
+        
+        .container {
+            margin: 0 auto;
+            max-width: 1800px;
+            height: 700px;
+            background-image: url('https://wallpaperaccess.com/full/2441903.jpg');
+            justify-content: center;
+            align-items: center;
+        }
+        
+        h1 {
+            font-size: 72px;
+            margin-bottom: 10px;
+            justify-content: center;
+            text-align: center;
+            color: black;
+            padding-top: 200px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        p {
+            font-size: 25px;
+            line-height: 1.6;
+            color: black;
+            text-align: center;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+        /* Service Section */
+        
+        .Service {
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 1rem;
+            background-color: #ecf0f1;
+            /* Light gray background */
+        }
+        
+        .a1,
+        .a2,
+        .a3,
+        .a4,
+        .a5,
+        .a6 {
+            margin: 0.5rem;
+            padding: 1rem;
+            border-radius: 10px;
+            background-color: #ffffff;
+            /* White card background */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            color: #2c3e50;
+            /* Dark navy text */
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .a1:hover,
+        .a2:hover,
+        .a3:hover,
+        .a4:hover,
+        .a5:hover,
+        .a6:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        #Article {
+            margin: 2rem auto;
+            /* max-width: 1200px; */
+            padding: 1rem;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            animation: Animation 1s ease-in-out;
+        }
+        
+        .head {
+            margin: 25px;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            /* background-color: #3498db; */
+            color: #ffffff;
+            border-radius: 10px;
+            background-image: url(https://www.proceco.com/hs-fs/hubfs/Autres/Proceco-service-call-2.webp?width=615&height=346&name=Proceco-service-call-2.webp);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        h1 {
+            font-size: clamp(1.8rem, 5vw, 2.5rem);
+        }
+        
+        .A-cont1 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            padding: 2rem;
+            text-align: center;
+            background-color: #f0f4f8;
+            /* Matching body background */
+        }
+        
+        .Image2 {
+            height: auto;
+            padding: 1rem;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .Image2 img {
+            width: 100%;
+            height: auto;
+            max-height: 15rem;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 2px solid #3498db;
+            /* Blue border */
+        }
+        /* Contact Section */
+        
+        .footer {
+            max-width: 1800px;
+            margin: 0 auto;
+            padding: 2rem;
+            background-color: #2c3e50;
+            /* Dark navy footer */
+            color: #ecf0f1;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .socials h2,
+        .contact-info h4,
+        .query-form h2 {
+            margin-bottom: 1rem;
+            font-size: clamp(1.2rem, 3vw, 1.5rem);
+            color: #e74c3c;
+            /* Red accent for headings */
+        }
+        
+        .socials {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .socials div {
+            font-size: 1.5rem;
+            margin: 0.5rem;
+            cursor: pointer;
+            transition: color 0.3s;
+            color: #ecf0f1;
+        }
+        
+        .socials div:hover {
+            color: #e74c3c;
+            /* Red hover effect */
+        }
+        
+        .contact-info div {
+            margin-bottom: 1rem;
+        }
+        
+        .contact-info a {
+            color: #3498db;
+            /* Blue links */
+            text-decoration: none;
+        }
+        
+        .contact-info a:hover {
+            color: #e74c3c;
+            /* Red on hover */
+            text-decoration: underline;
+        }
+        
+        .query-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .inline-fields {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .query-form input,
+        .query-form textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            background-color: #34495e;
+            /* Slightly lighter navy */
+            color: #ecf0f1;
+        }
+        
+        .query-form input::placeholder,
+        .query-form textarea::placeholder {
+            color: #bdc3c7;
+            /* Light gray placeholder */
+        }
+        
+        .query-form input {
+            flex: 1;
+            min-width: 150px;
+        }
+        
+        .query-form textarea {
+            resize: vertical;
+        }
+        
+        .query-form button {
+            padding: 0.8rem;
+            background-color: #e74c3c;
+            /* Red button */
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+        }
+        
+        .query-form button:hover {
+            background-color: #c0392b;
+            /* Darker red on hover */
+        }
+        /* Copyright */
+        
+        .copyright {
+            text-align: center;
+            margin-top: 20px;
+            padding: 1rem;
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            border-top: 1px solid #34495e;
+        }
+        
+        @keyframes Animation {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @media (max-width: 600px) {
+            nav {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .second {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            #info,
+            #contact-info {
+                margin: 5px 0;
+            }
+            .Service {
+                grid-template-columns: 1fr;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+            .A-cont1 {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <section class="first">
+            <div><img src="E:\PythonProject\logo1.jpg" alt="Logo"></div>
+            <div>
+                <h2>Company's Group</h2>
+            </div>
+        </section>
+        <section class="second">
+            <select name="home" id="info">Home
+                <option value=""><a href="http://">home</a></option>
+                <option value=""><a href="http://">second</a></option>
+                <option value=""><a href="http://">third</a></option>
+                <option value=""><a href="http://">fourth</a></option>
+            </select>
+            <select name="service" id="info">Services
+                <option value=""><a href="http://">service</a></option>
+                <option value=""><a href="http://">second</a></option>
+                <option value=""><a href="http://">third</a></option>
+                <option value=""><a href="http://">fourth</a></option>
+            </select>
+            <select name="work" id="info">work
+                <option value=""><a href="http://">work</a></option>
+                <option value=""><a href="http://">second</a></option>
+                <option value=""><a href="http://">third</a></option>
+                <option value=""><a href="http://">fourth</a></option>
+            </select>
+            <select name="about us" id="info">About Us
+                <option value=""><a href="http://">About Us</a></option>
+                <option value=""><a href="http://">second</a></option>
+                <option value=""><a href="http://">third</a></option>
+                <option value=""><a href="http://">fourth</a></option>
+            </select>
+            <select name="contact" id="contact-info">Contact Us
+                <option value=""><a href="http://">Contact Us</a></option>
+                <option value=""><a href="http://">second</a></option>
+                <option value=""><a href="http://">third</a></option>
+                <option value=""><a href="http://">fourth</a></option>
+            </select>
+            <button type="button"><a href="http://" target="_blank" rel="noopener noreferrer">login</a></button>
+            <button type="button"><a href="http://" target="_blank" rel="noopener noreferrer">sign up</a></button>
+        </section>
+    </nav>
+    <main>
+        <div class="container">
+            <h1>Welcome to Company's Group</h1>
+            <p>This is a Sample webpage for a Company's Group. Use the navigation bar to explore different sections.</p>
+        </div>
+        <section id="Artical">
+            <article class="head">
+                <h1>Expendable Universe</h1>
+                <p>A Unknown Mystery</p>
+            </article>
+            <article class="A-cont1">
+                <article class="Image2">
+                    <img src="https://img.freepik.com/premium-photo/design-process-concept-landing-page_1029473-661979.jpg" alt="Image 1">
+                    <p>
+                        A parabolic antenna is an antenna that uses a parabolic reflector, a curved surface with the cross-sectional shape of a parabola, to direct the radio waves. The most common form is shaped like a dish and is popularly called a dish antenna or parabolic
+                        dish.
+                    </p>
+                </article>
+                <article class="Image2">
+                    <img src="https://s3-alpha.figma.com/hub/file/6891529988/412ed3c4-e74b-4c44-bcb4-ab67343a83c1-cover.png" alt="Image 2">
+                    <p>
+                        A parabolic antenna is an antenna that uses a parabolic reflector, a curved surface with the cross-sectional shape of a parabola, to direct the radio waves. The most common form is shaped like a dish and is popularly called a dish antenna or parabolic
+                        dish.
+                    </p>
+                </article>
+                <article class="Image2">
+                    <img src="https://deharogroup.com/wp-content/uploads/2021/01/Graphic-Design-In-Advertising.jpg" alt="Image 3">
+                    <p>
+                        A parabolic antenna is an antenna that uses a parabolic reflector, a curved surface with the cross-sectional shape of a parabola, to direct the radio waves. The most common form is shaped like a dish and is popularly called a dish antenna or parabolic
+                        dish.
+                    </p>
+                </article>
+            </article>
+        </section>
+        <section id="Service">
+            <article class="Service">
+                <div class="a1">01<br>
+                    <p>Outsourcing day-to-day IT management responsibilities and functions.</p>
+                    <ul>
+                        <li>Network monitoring & management</li>
+                        <li>Data backup and disaster recovery</li>
+                        <li>IT support/help desk service</li>
+                        <li>Server management</li>
+                    </ul>
+                </div>
+                <div class="a2">02<br>
+                    <p>Delivering computing services like servers, storage, databases, networking, software, and more over the cloud.</p>
+                    <ul>
+                        <li>Cloud storage (Google Drive, Dropbox)</li>
+                        <li>Cloud hosting (AWS, Microsoft Azure)</li>
+                        <li>Software as a Service (SaaS) like Google Workspace, Microsoft 365</li>
+                        <li>Infrastructure as a Service (IaaS), Platform as a Service (PaaS)</li>
+                    </ul>
+                </div>
+                <div class="a3">03<br>
+                    <p>Protecting systems, networks, and data from cyber threats.</p>
+                    <ul>
+                        <li>Firewall and antivirus management</li>
+                        <li>Network security monitoring</li>
+                        <li>Penetration testing</li>
+                        <li>Security audits and compliance (ISO, GDPR)</li>
+                    </ul>
+                </div>
+                <div class="a4">04<br>
+                    <p>Creating custom software, mobile apps, and web applications tailored to business needs.</p>
+                    <ul>
+                        <li>Web development (frontend/backend)</li>
+                        <li>Mobile app development (Android/iOS)</li>
+                        <li>Enterprise software solutions (CRM, ERP)</li>
+                        <li>API development and integration</li>
+                    </ul>
+                </div>
+                <div class="a5">05<br>
+                    <p>Providing expert advice on leveraging IT to meet business objectives.</p>
+                    <ul>
+                        <li>IT strategy and planning</li>
+                        <li>Technology assessments and recommendations</li>
+                        <li>Digital transformation consulting</li>
+                        <li>Risk management and compliance consulting</li>
+                    </ul>
+                </div>
+                <div class="a6">06<br>
+                    <p>Designing, installing, and maintaining IT infrastructure and networks.</p>
+                    <ul>
+                        <li>Network design and implementation (LAN/WAN)</li>
+                        <li>Server and storage solutions</li>
+                        <li>Virtualization services (VMware, Hyper-V)</li>
+                        <li>Data center management</li>
+                    </ul>
+                </div>
+            </article>
+        </section>
+        <section id="Contact">
+            <div class="footer">
+                <div class="socials">
+                    <h2>Connect with Us</h2>
+                    <div class="socials-facebook"><i class="fab fa-facebook"></i>Company Group</div>
+                    <div class="socials-twitter"><i class="fab fa-twitter"></i>Company Group</div>
+                    <div class="socials-instagram"><i class="fab fa-instagram">Company Group</i></div>
+                    <div class="socials-linkedin"><i class="fab fa-linkedin">Company Group</i></div>
+                    <div class="socials-youtube"><i class="fab fa-youtube">Company Group</i></div>
+                </div>
+                <div class="contact-info">
+                    <h4>Contact Info</h4>
+                    <div class="contact-info-phone">
+                        <strong>Phone:</strong><br>
+                        <span>+91-XXXXXXXXXX</span>
+                    </div>
+                    <div class="contact-info-address">
+                        <strong>Address:</strong><br>
+                        <span>Deeksha KCR Town, Rohta, Agra</span>
+                    </div>
+                    <div class="contact-info-email">
+                        <strong>Email:</strong><br>
+                        <span>support@company group.com</span>
+                    </div>
+                    <div class="contact-info-whatsapp">
+                        <strong>Whatsapp:</strong><br>
+                        <span><a href="https://wa.me/313245132321">Chat on Whatsapp</a></span>
+                    </div>
+                </div>
+                <div class="query-form">
+                    <h2>Drop Us A Line</h2>
+                    <div class="inline-fields">
+                        <input type="text" placeholder="Name" required>
+                        <input type="text" placeholder="Contact No" required>
+                    </div>
+                    <div class="inline-fields">
+                        <input type="email" placeholder="Email" required>
+                        <input type="text" placeholder="Subject" required>
+                    </div>
+                    <textarea placeholder="Enter your query" rows="4" required></textarea>
+                    <button type="submit">Send</button>
+                </div>
+            </div>
+            <p class="copyright">
+                © 2025, Created By Company's Group. All rights reserved.
+            </p>
+        </section>
+    </main>
+</body>
+
+</html>

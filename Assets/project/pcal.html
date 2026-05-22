@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physics Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .calculator {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            width: 400px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .input-group {
+            margin: 15px 0;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #result {
+            margin-top: 20px;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            display: none;
+        }
+        .success {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        .error {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <h1>Physics Calculator</h1>
+        <div class="input-group">
+            <label for="calculationType">Select Calculation</label>
+            <select id="calculationType" onchange="updateInputs()">
+                <option value="force">Force (F = m × a)</option>
+                <option value="work">Work (W = F × d)</option>
+                <option value="kineticEnergy">Kinetic Energy (KE = ½ × m × v²)</option>
+                <option value="momentum">Momentum (p = m × v)</option>
+            </select>
+        </div>
+        <div id="inputs">
+            <div class="input-group">
+                <label for="mass">Mass (kg)</label>
+                <input type="number" id="mass" step="any" placeholder="Enter mass">
+            </div>
+            <div class="input-group">
+                <label id="secondLabel" for="secondInput">Acceleration (m/s²)</label>
+                <input type="number" id="secondInput" step="any" placeholder="Enter acceleration">
+            </div>
+        </div>
+        <button onclick="calculate()">Calculate</button>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function updateInputs() {
+            const type = document.getElementById('calculationType').value;
+            const secondLabel = document.getElementById('secondLabel');
+            const secondInput = document.getElementById('secondInput');
+            
+            if (type === 'force') {
+                secondLabel.textContent = 'Acceleration (m/s²)';
+                secondInput.placeholder = 'Enter acceleration';
+            } else if (type === 'work') {
+                secondLabel.textContent = 'Distance (m)';
+                secondInput.placeholder = 'Enter distance';
+            } else if (type === 'kineticEnergy') {
+                secondLabel.textContent = 'Velocity (m/s)';
+                secondInput.placeholder = 'Enter velocity';
+            } else if (type === 'momentum') {
+                secondLabel.textContent = 'Velocity (m/s)';
+                secondInput.placeholder = 'Enter velocity';
+            }
+        }
+
+        function calculate() {
+            const type = document.getElementById('calculationType').value;
+            const mass = parseFloat(document.getElementById('mass').value);
+            const secondInput = parseFloat(document.getElementById('secondInput').value);
+            const resultDiv = document.getElementById('result');
+            
+            // Input validation
+            if (isNaN(mass) || isNaN(secondInput)) {
+                resultDiv.textContent = 'Please enter valid numbers for all inputs.';
+                resultDiv.className = 'error';
+                resultDiv.style.display = 'block';
+                return;
+            }
+
+            let result;
+            let unit;
+
+            // Calculations
+            if (type === 'force') {
+                result = mass * secondInput;
+                unit = 'N';
+                resultDiv.textContent = `Force = ${result.toFixed(2)} ${unit}`;
+            } else if (type === 'work') {
+                result = mass * secondInput;
+                unit = 'J';
+                resultDiv.textContent = `Work = ${result.toFixed(2)} ${unit}`;
+            } else if (type === 'kineticEnergy') {
+                result = 0.5 * mass * secondInput * secondInput;
+                unit = 'J';
+                resultDiv.textContent = `Kinetic Energy = ${result.toFixed(2)} ${unit}`;
+            } else if (type === 'momentum') {
+                result = mass * secondInput;
+                unit = 'kg·m/s';
+                resultDiv.textContent = `Momentum = ${result.toFixed(2)} ${unit}`;
+            }
+
+            resultDiv.className = 'success';
+            resultDiv.style.display = 'block';
+        }
+
+        // Initialize input fields on page load
+        updateInputs();
+    </script>
+</body>
+</html>
